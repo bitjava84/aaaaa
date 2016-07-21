@@ -1,0 +1,18 @@
+package ngolo_kante13;
+
+public class IF_Saviola7 {
+
+	public static void main(String[] args) {
+		int num=10;
+		
+		if(num>0)
+			System.out.println("num은 0보다 크다.");
+		
+		if((num%2)==0)
+			System.out.println("num은짝수");
+		else
+			System.out.println("num은홀수");
+
+	}
+
+}
