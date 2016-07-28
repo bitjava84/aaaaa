@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Person{
 
 	private String name;
-	private double height; 
+	private int height; 
 	private double weight; 
 	private String result;
 
@@ -15,10 +15,10 @@ class Person{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getHeight() {
+	public int getHeight() {
 		return height;
 	}
-	public void setHeight(double height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 	public double getWeight() {
@@ -33,31 +33,13 @@ class Person{
 	public void setResult(String result2) {
 		this.result = result2;
 	}
+	
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", height=" + height + ", weight=" + weight + ", result=" + result + "]";
 	}
 }
 
-class Assign{
-
-	public String BMI(double hight,double weight){
-
-		double result;
-
-		result = (weight / ((hight - 100) * 0.9)) * 100;
-
-		if (result >= 120) {
-			return "비만";
-		} else if (result >= 110) {
-			return "과체중";
-		} else if (result >= 90) {
-			return "정상";
-		} else 
-			return "저체중";
-	}
-
-}
 
 public class ClassArrayBMI {
 
@@ -66,7 +48,7 @@ public class ClassArrayBMI {
 		Scanner sc = new Scanner(System.in);
 
 		Person person = new Person();
-		Assign assign = new Assign();
+		Calculator cal = new Calculator();
 
 		System.out.println("이름 입력");
 		person.setName(sc.nextLine());
@@ -77,7 +59,7 @@ public class ClassArrayBMI {
 		System.out.println("몸무게 입력");
 		person.setWeight(sc.nextDouble()); 
 
-		String result = assign.BMI(person.getHeight(), person.getWeight());
+		String result = cal.BMI(person.getHeight(), person.getWeight());
 		person.setResult(result);
 
 		System.out.println(person.toString());
